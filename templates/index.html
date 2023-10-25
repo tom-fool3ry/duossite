@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>is duos up?</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+</head>
+
+<body>
+    <div class="outter-container">
+        <div class="message-container">
+            <h1 class="answer"></h1>
+            <h3 class="next"></h3>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    const timeToStr = (time) => (time < 10 ? '0' : '') + time;
+    const startTimeStr = "2023-10-24T22:00:00Z";
+    intervalSize = 5;
+    let startTime = new Date(startTimeStr);
+    setInterval(() => {
+    
+        let currentTime = new Date();
+        let isOn = (Math.floor((Math.abs(startTime - currentTime) / 36e5)/intervalSize) % 2 ) == 0;
+        
+        // Calculate the time difference in milliseconds between the current time and the start time
+        const timeDifference = currentTime - startTime;
+
+        const switchInterval = intervalSize * 60 * 60 * 1000;
+        const nextSwitchTime = new Date(startTime.getTime() + Math.floor(timeDifference / switchInterval) * switchInterval + switchInterval);
+        const timeLeft = nextSwitchTime - currentTime;
+        const hoursLeft = timeToStr(Math.floor(timeLeft / (60 * 60 * 1000)));
+        const minutesLeft = timeToStr(Math.floor((timeLeft % (60 * 60 * 1000)) / (60 * 1000)));
+        const secondsLeft = timeToStr(Math.floor((timeLeft % (60 * 1000)) / 1000));
+        
+        document.querySelector('.answer').textContent = isOn ? 'yes' : 'no';
+        document.querySelector('title').textContent = isOn ? 'yes' : 'no';
+        document.querySelector('.next').textContent = `duos is  ${isOn ? 'off' : 'on'} in ${hoursLeft}:${minutesLeft}:${secondsLeft}`
+    }, 1000);
+</script>
+</html>
