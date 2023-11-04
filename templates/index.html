@@ -6,7 +6,7 @@
     <title>is duos live?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <meta charset="utf-8" />
-    <link rel="icon" href="/static/images/icon2.svg">
+    <link rel="icon" href="/static/media/images/icon2.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
@@ -23,47 +23,21 @@
                 <button title="View Daily Schedule" class="time-left"> </button>
             </h3>
         </div>
+        <div id="modal-calendar" class="modal">
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Modal</p>
+            </div>
+        
+        </div>
     </div>
 </body>
 
+<script type="text/javascript" src="static/js/time-manager.js"> </script>
+<script type="text/javascript" src="static/js/modal-manager.js"> </script>
+
+
 <script type="text/javascript">
-    const oppositeAns = {yes: 'no', no: 'yes'}
-    const iconPaths = {yes: 'static/images/yes.svg', no: 'static/images/no.svg'}
-    const timeToStr = (time) => (time < 10 ? '0' : '') + time;
-    const intervalSize = 5;
-    const startTimeStr = "2023-10-24T22:00:00Z";
-    
-    let startTime = new Date(startTimeStr);
-    let prevAnswer = null;
-    setInterval(() => {
-    
-        let currentTime = new Date();
-        let isOn = (Math.floor((Math.abs(startTime - currentTime) / 36e5)/intervalSize) % 2 ) == 0;
-        const timeDifference = currentTime - startTime;
-        const switchInterval = intervalSize * 60 * 60 * 1000;
-        const nextSwitchTime = new Date(startTime.getTime() + Math.floor(timeDifference / switchInterval) * switchInterval + switchInterval);
-        const timeLeft = nextSwitchTime - currentTime;
-
-        const hoursSwitch = nextSwitchTime.getHours();
-        const minutesSwitch = timeToStr(Math.floor((nextSwitchTime % (60 * 60 * 1000)) / (60 * 1000)));
-
-        const hoursLeft = timeToStr(Math.floor(timeLeft / (60 * 60 * 1000)));
-        const minutesLeft = timeToStr(Math.floor((timeLeft % (60 * 60 * 1000)) / (60 * 1000)));
-        const secondsLeft = timeToStr(Math.floor((timeLeft % (60 * 1000)) / 1000));
-        
-        const answer = isOn ? 'yes' : 'no';
-        document.querySelector('.answer').textContent = answer;
-        document.querySelector('title').textContent = `${isOn ? 'duos is live' : 'duos is not live'}`;
-        document.querySelector('.next-message').textContent = `duos is live ${isOn ? 'until' : 'at'} `
-        document.querySelector('.time-left').textContent = `${hoursSwitch==0 ? 1 : hoursSwitch%12}:${minutesSwitch}${hoursSwitch>11?'pm':'am'}  (-${hoursLeft}:${minutesLeft}:${secondsLeft})`
-        
-        if (answer != prevAnswer){
-            let classes = document.querySelector('body').classList;
-            classes.add(answer);
-            classes.remove(oppositeAns[answer]);
-            document.querySelector('link[rel="icon"]').href = iconPaths[answer];
-        }
-        prevAnswer = answer;
-    }, 1000);
+    timeManager.init();
 </script>
 </html>
