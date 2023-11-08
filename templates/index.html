@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>is duos live?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="/static/media/images/icon2.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+</head>
+
+<body>
+    <div class="background-fade"></div>
+    <div class="root">
+        <div class="message-container">
+            <h1 class="answer"></h1>
+            <h3 class="next">
+                <span class="next-message"></span> 
+                <button title="View Daily Schedule" class="time-left"> </button>
+            </h3>
+        </div>
+        <div id="modal-calendar" class="modal">
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Modal</p>
+            </div>
+        
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="static/js/time-manager.js"> </script>
+<script type="text/javascript" src="static/js/modal-manager.js"> </script>
+
+
+<script type="text/javascript">
+    timeManager.init();
+</script>
+</html>
