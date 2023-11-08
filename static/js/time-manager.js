@@ -17,7 +17,7 @@ let timeManager = {
         setInterval(() => {
             let currentTime = new Date();
             let isOn = (Math.floor((Math.abs(self.startTime - currentTime) / 36e5)/self.intervalSize) % 2 ) == 0;
-            isOn = true;
+            // isOn = true;
     
             self.update_timer(currentTime);
             
