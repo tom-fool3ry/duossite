@@ -11,15 +11,20 @@ body {
     height: 100vh;
     width: 100vw;
     flex-direction: column;
-    color: #000d59;
+    /* color: #000d59; */
+    color: #ffffff;
 }
 
 body.yes {
-  background: linear-gradient(rgb(154, 236, 154,1), rgb(154, 236, 154, .4));
+  /* background: linear-gradient(rgb(154, 236, 154,1), rgb(154, 236, 154, .4)); */
+  background-color: #250042;
 }
 
 body.no {
-  background: linear-gradient(rgb(255, 138, 168,.8), rgb(255, 138, 168, .5));
+  /* background: linear-gradient(rgb(255, 138, 168,.8), rgb(255, 138, 168, .5)); */
+  /* background: linear-gradient(#2f0154cb, #2f0154); */
+  background-color: #250042;
+
 }
 
 @keyframes fade {
@@ -53,7 +58,7 @@ body.no {
   background-repeat: no-repeat;
 }
 
-body.yes .background-fade {
+/* body.yes .background-fade {
   background-image: url('/static/media/gifs/peter_gifs/peterwin_nojump.gif'); 
   animation: fade 3.5s ease forwards; 
 }
@@ -61,7 +66,7 @@ body.yes .background-fade {
 body.no .background-fade {
   background-image: url('/static/media/gifs/peter_gifs/peterlose_nojump.gif'); 
   animation: fade 4.5s ease forwards; 
-}
+} */
 
 .answer {
     font-size: 150px;
@@ -78,16 +83,34 @@ body.no .background-fade {
 .time-left {
   border-radius: 10px;
   padding: 10px 10px;
-  background: rgb(209 159 255 / 25%);
+  color: #f4f4f4;
   border: none;
   font-size: 40px;
   font-family: 'Open Sans', sans-serif !important;
 }
 
+body.yes .time-left {
+  background: #15ff1040;
+}
+
+body.no .time-left {
+  background: #ff8da540;
+}
+
 .time-left:hover {
-  background: rgba(131, 0, 253, 0.40);
+  /* background: rgba(131, 0, 253, 0.40); */
   border-radius: 10px;
-  color: #f4f4f4;
+  color: #250042;
+}
+
+body.yes .time-left:hover {
+  background-color: rgb(139, 235, 139);
+
+}
+
+body.no .time-left:hover {
+  background-color: rgb(255, 138, 168,1);
+
 }
 
 .time-left:focus-visible {
@@ -95,9 +118,20 @@ body.no .background-fade {
 }
 
 .time-left:active {
-  color: #f1dede;
-  background: rgba(131, 0, 253, 0.55);
+  /* color: #f1dede; */
+  /* background: rgba(131, 0, 253, 0.55); */
+  /* color: #250042; */
   transition: all .05s ease; 
+}
+
+body.yes .time-left:active {
+
+  background-color: rgb(177, 245, 177);
+}
+
+body.no .time-left:active {
+
+  background-color: rgb(255, 159, 183);
 }
 
 .modal {
