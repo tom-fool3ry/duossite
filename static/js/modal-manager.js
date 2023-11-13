@@ -8,16 +8,19 @@ let modalManager = {
     set_bindings : function() {
 
         document.querySelector(`.${timeManager.timeLeftClass}`).onclick = () => {
-            this.modal.style.display = "block";
+            this.modal.classList.add('modal-open');
+            this.modal.classList.remove('modal-close');
         }
 
         document.querySelector(".close").onclick = () => {
-            this.modal.style.display = "none";
+            this.modal.classList.add('modal-close');
+            this.modal.classList.remove('modal-open');
         }
 
         window.onclick = (event) => {
             if (event.target == this.modal) {
-                this.modal.style.display = "none";
+                this.modal.classList.add('modal-close');
+                this.modal.classList.remove('modal-open');
             }
         }
     }
