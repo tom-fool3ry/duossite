@@ -29,17 +29,7 @@ body.no {
 
 @keyframes fade {
   0% {
-      opacity: 1; /*start*/
-  }
-  33% {
-      opacity: 0.5;
-  }
-
-  55% {
-    opacity: .2;
-  }
-  75% {
-    opacity: .1; 
+      opacity: .8; /*start*/
   }
   100% {
       opacity: 0;
@@ -58,15 +48,15 @@ body.no {
   background-repeat: no-repeat;
 }
 
-/* body.yes .background-fade {
-  background-image: url('/static/media/gifs/peter_gifs/peterwin_nojump.gif'); 
+body.yes .background-fade {
+  background-image: url('/static/media/gifs/peter_gifs/peterwin_nojump_purple.gif'); 
   animation: fade 3.5s ease forwards; 
 }
 
 body.no .background-fade {
-  background-image: url('/static/media/gifs/peter_gifs/peterlose_nojump.gif'); 
+  background-image: url('/static/media/gifs/peter_gifs/peterlose_purple.gif'); 
   animation: fade 4.5s ease forwards; 
-} */
+}
 
 .answer {
     font-size: 150px;
@@ -98,6 +88,12 @@ body.no .time-left {
 }
 
 .time-left:hover {
+  /* background: rgba(131, 0, 253, 0.40); */
+  border-radius: 10px;
+  color: #250042;
+}
+
+.time-left:active {
   /* background: rgba(131, 0, 253, 0.40); */
   border-radius: 10px;
   color: #250042;
