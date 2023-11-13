@@ -80,11 +80,12 @@ body.no .background-fade {
 }
 
 body.yes .time-left {
-  background: #15ff1040;
+  background: #2e4132;
+  
 }
 
 body.no .time-left {
-  background: #ff8da540;
+  background: #59245b;
 }
 
 .time-left:hover {
@@ -203,7 +204,7 @@ body.no .time-left:active {
   color: #ff6a6a;
 }
 
-@media (max-width:700px)  {
+@media (max-width:750px)  {
   .answer {
     font-size: 140px !important;
   }
@@ -214,21 +215,40 @@ body.no .time-left:active {
   .time-left {
     font-size: 35px;
   }
+
+  .modal-content {
+    width: 500px;
+  }
+}
+
+@media (max-width:550px)  {
+  .modal-content {
+    width: 450px;
+  }
+
+}
+
+@media (max-width:450px)  {
+  .modal-content {
+    width: 90vw;
+    min-width: 200px;
+  }
+
 }
 
 @media (max-width:410px)  {
   body.yes .background-fade {
-    background-image: url('/static/media/gifs/peter_gifs/peterwin_nojump_small.gif'); 
+    background-image: url('/static/media/gifs/peter_gifs/peterwin_nojump_purple_small.gif'); 
     animation: fade 3.5s ease forwards; 
   }
 
   body.no .background-fade {
-    background-image: url('/static/media/gifs/peter_gifs/peterlose_nojump_small.gif'); 
+    background-image: url('/static/media/gifs/peter_gifs/peterlose_purple_small.gif'); 
     animation: fade 3.5s ease forwards; 
   }
 
   .answer {
-    font-size: 120px !important;
+    font-size: 100px !important;
   }
 
   .next {
@@ -239,16 +259,28 @@ body.no .time-left:active {
   .time-left {
     font-size: 25px;
   }
+
+
 }
 
-@media (max-height:400px)  {
+button.time-left {
+  margin-top: 10px;
+}
+@media (max-height:550px)  {
+  
+  .modal-content {
+    height: 400px;
+  }
+}
+
+@media (max-height:450px)  {
   body.yes .background-fade {
-    background-image: url('/static/media/gifs/peter_gifs/peterwin_nojump_small.gif'); 
+    background-image: url('/static/media/gifs/peter_gifs/peterwin_nojump_purple_small.gif'); 
     animation: fade 3.5s ease forwards; 
   }
 
   body.no .background-fade {
-    background-image: url('/static/media/gifs/peter_gifs/peterlose_nojump_small.gif'); 
+    background-image: url('/static/media/gifs/peter_gifs/peterlose_purple_small.gif'); 
     animation: fade 3.5s ease forwards; 
   }
 
@@ -260,5 +292,13 @@ body.no .time-left:active {
   .next {
     margin-bottom: 10px;
   }
- 
+  .modal-content {
+    height: 350px;
+  }
+}
+
+@media (max-height:400px)  {
+  .modal-content {
+    height: 300px;
+  }
 }
