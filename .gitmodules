@@ -1,4 +1,4 @@
-[submodule "hourly-calendar"]
-path = duossite/static/modules/hourly-calendar/
-url = https://github.com/tom-fool3ry/hourly-calendar.git
-branch=duos-calendar
+[submodule "duossite/static/modules/hourly-calendar"]
+	path = duossite/static/modules/hourly-calendar
+	url = https://github.com/tom-fool3ry/hourly-calendar.git
+    branch=duos-calendar
