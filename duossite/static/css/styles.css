@@ -132,8 +132,7 @@ body.no .time-left:active {
 }
 
 .modal {
-  display: block; 
-  /* display: none;  */
+  display: flex;
   position: fixed; 
   z-index: 3; 
   left: 0;
