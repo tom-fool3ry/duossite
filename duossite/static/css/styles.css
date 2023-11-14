@@ -50,12 +50,12 @@ body.no {
 
 body.yes .background-fade {
   background-image: url('/static/media/gifs/peter_gifs/peterwin_nojump_purple.gif'); 
-  animation: fade 3.5s ease-out; 
+  animation: fade 3.5s ease-out forwards; 
 }
 
 body.no .background-fade {
   background-image: url('/static/media/gifs/peter_gifs/peterlose_purple.gif'); 
-  animation: fade 4.5s ease-out; 
+  animation: fade 4.5s ease-out forwards; 
 }
 
 .answer {
