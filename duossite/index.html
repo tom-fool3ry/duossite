@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>is duos live?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="/static/media/images/icon2.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/modules/hourly-calendar/css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <div class="background-fade"></div>
+    <div class="root hide">
+        <div class="message-container">
+            <h1 class="answer"></h1>
+            <h3 class="next">
+                <span class="next-message"></span> 
+                <button title="View Hourly Schedule" class="time-left"> </button>
+            </h3>
+        </div>
+        <div id="modal-calendar" class="modal modal-close">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <p class="modal-header-title">Duos Schedule</p>
+                </div>
+                <div class="modal-body">
+                    <div class="hourly-calendar-main-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="module" src="/static/modules/hourly-calendar/js/hourly-calendar.js"></script>
+<script type="text/javascript" src="static/js/time-manager.js"> </script>
+<script type="text/javascript" src="static/js/modal-manager.js"> </script>
+
+
+<script type="text/javascript">
+    timeManager.init();
+    modalManager.init();
+</script>
+</html>
