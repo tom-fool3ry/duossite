@@ -1,6 +1,6 @@
 let timeManager = {
     answerMap : {true: 'yes', false: 'no'},
-    iconPaths : {true: 'static/media/images/yes.svg', false: 'static/media/images/no.svg'},
+    iconPaths : {true: '/static/media/images/yes.svg', false: '/static/media/images/no.svg'},
     intervalSize : 5,
     startTimeStr : "2023-10-24T22:00:00Z",
     startTime : null,
@@ -8,7 +8,6 @@ let timeManager = {
 
     init : function() {
         this.startTime = new Date(this.startTimeStr);
-
         this.set_timer();
     },
     set_timer() {
@@ -22,6 +21,8 @@ let timeManager = {
             self.update_timer(currentTime);
             
             if (isOn != prevAnswer){
+                document.querySelector('.root').classList.remove('hide');
+
                 self.update_answer(isOn);
             }
             prevAnswer = isOn;
@@ -35,7 +36,7 @@ let timeManager = {
         let classes = document.querySelector('body').classList;
         classes.add(this.answerMap[isOn]);
         classes.remove(this.answerMap[!isOn]);
-        document.querySelector('link[rel="icon"]').href = this.iconPaths[this.answerMap[isOn]];
+        document.querySelector('link[rel="icon"]').href = this.iconPaths[isOn];
         document.querySelector('title').textContent = `${isOn ? 'duos is live' : 'duos is not live'}`;
         document.querySelector('.answer').textContent = this.answerMap[isOn];
         document.querySelector('.next-message').textContent = `duos is live ${isOn ? 'until' : 'at'} `;
@@ -46,13 +47,14 @@ let timeManager = {
         const nextSwitchTime = new Date(this.startTime.getTime() + Math.floor(timeDifference / switchInterval) * switchInterval + switchInterval);
         const timeLeft = nextSwitchTime - currentTime;
         const hoursSwitch = nextSwitchTime.getHours();
+        const hoursDisplay = hoursSwitch%12==0 ? 12 : hoursSwitch%12;
 
         const minutesSwitch = this.time_to_str(Math.floor((nextSwitchTime % (60 * 60 * 1000)) / (60 * 1000)));
         const hoursLeft = this.time_to_str(Math.floor(timeLeft / (60 * 60 * 1000)));
         const minutesLeft = this.time_to_str(Math.floor((timeLeft % (60 * 60 * 1000)) / (60 * 1000)));
         const secondsLeft = this.time_to_str(Math.floor((timeLeft % (60 * 1000)) / 1000));
-        
-        document.querySelector(`.${this.timeLeftClass}`).textContent = `${hoursSwitch==0 ? 1 : hoursSwitch%12}:${minutesSwitch}${hoursSwitch>11?'pm':'am'}  (-${hoursLeft}:${minutesLeft}:${secondsLeft})`
+
+        document.querySelector(`.${this.timeLeftClass}`).textContent = `${hoursDisplay}:${minutesSwitch}${hoursSwitch>11?'pm':'am'}  (-${hoursLeft}:${minutesLeft}:${secondsLeft})`
     }
 }
 
