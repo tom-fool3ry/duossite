@@ -207,12 +207,17 @@ body.no .time-left:active {
   display: none;
 }
 
+
+button.time-left {
+  margin-top: 10px;
+}
+
 @media (max-width:750px)  {
   .answer {
-    font-size: 140px !important;
+    font-size: 140px;
   }
   .next {
-    font-size: 35px !important;
+    font-size: 35px;
     text-align: center;
   }
   .time-left {
@@ -241,24 +246,19 @@ body.no .time-left:active {
 
 @media (max-width:410px)  {
   .answer {
-    font-size: 100px !important;
+    font-size: 100px;
   }
 
   .next {
-    font-size: 25px !important;
+    font-size: 25px;
     text-align: center;
   }
 
   .time-left {
     font-size: 25px;
   }
-
-
 }
 
-button.time-left {
-  margin-top: 10px;
-}
 @media (max-height:550px)  {
   
   .modal-content {
@@ -268,7 +268,7 @@ button.time-left {
 
 @media (max-height:450px)  {
   .answer {
-    font-size: 140px !important;
+    font-size: 140px;
     margin-bottom: 0;
   }
 
@@ -283,6 +283,30 @@ button.time-left {
 @media (max-height:400px)  {
   .modal-content {
     height: 300px;
+  }
+}
+
+@media (max-height:300px)  {
+  .answer {
+    font-size: 100px;
+  }
+  .next {
+    font-size: 25px;
+  }
+  .time-left {
+    font-size: 25px;
+  }
+}
+
+@media (max-height:230px)  {
+  .answer {
+    font-size: 70px;
+  }
+  .next {
+    font-size: 15px;
+  }
+  .time-left {
+    font-size: 15px;
   }
 }
 
