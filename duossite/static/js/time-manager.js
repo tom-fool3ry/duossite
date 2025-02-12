@@ -1,7 +1,7 @@
 let timeManager = {
     answerMap : {true: 'yes', false: 'no'},
     iconPaths : {true: '/static/media/images/yes.svg', false: '/static/media/images/no.svg'},
-    intervalSize : 5,
+    intervalSize : 2.5,
     startTimeStr : "2024-12-31T17:00:00Z",
     startTime : null,
     timeLeftClass : 'time-left',
